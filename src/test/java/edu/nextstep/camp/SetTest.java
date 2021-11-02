@@ -38,9 +38,7 @@ public class SetTest {
     // 예를 들어 1, 2, 3 값은 contains 메소드 실행결과 true, 4, 5 값을 넣으면 false 가 반환되는 테스트를 하나의 Test Case로 구현한다.
     @ParameterizedTest(name = "check element contains in set: {arguments}")
     @CsvSource(value = {"1,true", "2,true", "3,true", "4,false", "5,false"})
-    public void testContains(String numberParam, String expectedParam) {
-        int n =  Integer.parseInt(numberParam);
-        boolean expected = Boolean.parseBoolean(expectedParam);
-        assertThat(numbers.contains(n)).isEqualTo(expected);
+    public void testContains(int number, boolean expected) {
+        assertThat(numbers.contains(number)).isEqualTo(expected);
     }
 }
